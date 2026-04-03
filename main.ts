@@ -2544,16 +2544,6 @@ export default class HighlightCommentsPlugin extends Plugin {
             });
         }
 
-        // Find inline code blocks (`code`)
-        const inlineCodeRegex = /`([^`\n]+?)`/g;
-        let inlineMatch;
-        while ((inlineMatch = inlineCodeRegex.exec(content)) !== null) {
-            ranges.push({
-                start: inlineMatch.index,
-                end: inlineMatch.index + inlineMatch[0].length
-            });
-        }
-
         return ranges;
     }
 
